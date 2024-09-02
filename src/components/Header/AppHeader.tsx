@@ -14,10 +14,14 @@ import {
 } from '@carbon/react';
 
 import { Switcher, Notification, UserAvatar } from '@carbon/icons-react';
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 
-const AppHeader = () => (
-    <HeaderContainer
+export default function AppHeader() {
+    const router = useRouter()
+
+    return (<HeaderContainer
         render={({ isSideNavExpanded, onClickSideNavExpand }: any) => (
             <Header aria-label="Carbon Tutorial">
                 <SkipToContent />
@@ -26,11 +30,12 @@ const AppHeader = () => (
                     onClick={onClickSideNavExpand}
                     isActive={isSideNavExpanded}
                 />
-                <HeaderName href="/" prefix="IBM">
-                    Carbon Tutorial
+                <HeaderName onClick={() => { router.push('/') }}>
+                    Accessibility Demo
                 </HeaderName>
-                <HeaderNavigation aria-label="Carbon Tutorial">
-                    <HeaderMenuItem href="/repos">Repositories</HeaderMenuItem>
+                <HeaderNavigation aria-label="Accessibility demo with carbon">
+                    <HeaderMenuItem onClick={() => { router.push('/good-example') }}>Good</HeaderMenuItem>
+                    <HeaderMenuItem onClick={() => { router.push('/bad-example') }}>Bad</HeaderMenuItem>
                 </HeaderNavigation>
                 <SideNav
                     aria-label="Side navigation"
@@ -64,7 +69,5 @@ const AppHeader = () => (
                 </HeaderGlobalBar>
             </Header>
         )}
-    />
-);
-
-export default AppHeader;
+    />)
+}
