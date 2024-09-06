@@ -1,0 +1,8 @@
+.interactableLi {
+  min-height: 1.75em;
+}
+
+.interactableLi:hover , .interactableLi:focus{
+  cursor: pointer;
+  color: blue;
+}

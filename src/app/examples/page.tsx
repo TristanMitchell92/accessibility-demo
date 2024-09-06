@@ -4,6 +4,7 @@ import { Tabs, TabList, TabPanels, TabPanel, Tab } from '@carbon/react'
 
 import NoRolePage from './no-role/page'
 import FontColourContrastPage from './font-contrast/page'
+import NoAriaLabelsPage from './no-aria-labels/page';
 
 export default function Page() {
     return <div>
@@ -11,12 +12,20 @@ export default function Page() {
 
         <Tabs>
             <TabList aria-label='list of tabs'>
-                <Tab>Aria Roles</Tab>
+                <Tab>Tab Index</Tab>
+                <Tab>Aria Labels</Tab>
                 <Tab>Colour Contrast</Tab>
             </TabList>
             <TabPanels>
-                <TabPanel><NoRolePage /></TabPanel>
-                <TabPanel><FontColourContrastPage /></TabPanel>
+                <TabPanel>
+                    <NoRolePage />
+                </TabPanel>
+                <TabPanel>
+                    <NoAriaLabelsPage />
+                </TabPanel>
+                <TabPanel>
+                    <FontColourContrastPage />
+                </TabPanel>
             </TabPanels>
         </Tabs>
 

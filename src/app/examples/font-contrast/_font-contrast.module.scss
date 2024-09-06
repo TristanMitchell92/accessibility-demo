@@ -1,13 +1,21 @@
-.tileOverride {
+.tileOverridePurple {
   background-color: purple;
-  font-family: tahoma;
+  font-family: Times, "Times New Roman", Georgia, serif;
 
   p {
-    font-family: cursive, geneva;
     color: gray;
   }
 }
 
-.tileOverride * {
+.tileOverrideRed {
+    background-color: Red;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+  
+    p {
+      color: green;
+    }
+  }
+
+.tileOverridePurple * {
   font-family: inherit;
 }
