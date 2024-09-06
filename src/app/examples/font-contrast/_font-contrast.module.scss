@@ -1,0 +1,13 @@
+.tileOverride {
+  background-color: purple;
+  font-family: tahoma;
+
+  p {
+    font-family: cursive, geneva;
+    color: gray;
+  }
+}
+
+.tileOverride * {
+  font-family: inherit;
+}

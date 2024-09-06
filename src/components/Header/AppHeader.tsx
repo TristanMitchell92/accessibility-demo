@@ -14,7 +14,6 @@ import {
 } from '@carbon/react';
 
 import { Switcher, Notification, UserAvatar } from '@carbon/icons-react';
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 
@@ -34,20 +33,8 @@ export default function AppHeader() {
                     Accessibility Demo
                 </HeaderName>
                 <HeaderNavigation aria-label="Accessibility demo with carbon">
-                    <HeaderMenuItem onClick={() => { router.push('/good-example') }}>Good</HeaderMenuItem>
-                    <HeaderMenuItem onClick={() => { router.push('/bad-example') }}>Bad</HeaderMenuItem>
+                    <HeaderMenuItem onClick={() => { router.push('/examples') }}>Examples</HeaderMenuItem>
                 </HeaderNavigation>
-                <SideNav
-                    aria-label="Side navigation"
-                    expanded={isSideNavExpanded}
-                    isPersistent={false}
-                >
-                    <SideNavItems>
-                        <HeaderSideNavItems>
-                            <HeaderMenuItem href="/repos">Repositories</HeaderMenuItem>
-                        </HeaderSideNavItems>
-                    </SideNavItems>
-                </SideNav>
                 <HeaderGlobalBar>
                     <HeaderGlobalAction
                         aria-label="Notifications"
