@@ -1,6 +1,7 @@
 "use client";
 import { Tile } from '@carbon/react'
 import styles from './_font-contrast.module.scss'
+import Link from 'next/link';
 
 export default function FontColourContrastPage() {
     return <div>
@@ -32,5 +33,8 @@ export default function FontColourContrastPage() {
                 DSL model cowboy coding atomic design shareware machine learning compression j contribute. Concurrent const bitwise operator ecommerce platform senior clean code cache off-by-one error composition neck beard. Junior gzip npm killer app hardcoded frame rate pivot S3 senior quick sort.
             </p>
         </Tile>
+        <br/>
+        <h3>Additional Resource</h3>
+        <Link target='_blank' href='https://www.a11y-collective.com/blog/color-blind-accessibility-guidelines/' >An Introduction to Colour Blindness Accessibility</Link>
     </div>
 }

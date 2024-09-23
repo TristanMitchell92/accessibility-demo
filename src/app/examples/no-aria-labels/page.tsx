@@ -18,7 +18,7 @@ export default function NoAriaLabelsPage() {
 
     return <div>
         <h3>Missing Aria-labels</h3>
-        <p>The <Link target='_blank' href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label">aria-label</Link> attribute defines a string value that labels an interactive element.</p>
+        <b>The <Link target='_blank' href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label">aria-label</Link> attribute defines a string value that labels an interactive element.</b>
         <p>Times Clicked: <b>{clickedCount}</b></p>
         <br />
         <Tile>
@@ -54,7 +54,7 @@ export default function NoAriaLabelsPage() {
             <IconButton label="Edit Item" kind="secondary" onClick={handleClick}>
                 <Edit />
             </IconButton>
-            <IconButton label="Delete Item" kind="danger" onClick={resetCountClick}>
+            <IconButton label="Delete Item" kind="tertiary" onClick={resetCountClick}>
                 <Delete />
             </IconButton>
         </Tile>

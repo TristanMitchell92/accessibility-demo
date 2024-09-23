@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ToastNotification, Tile, Button, ButtonSet } from "@carbon/react";
+import { ToastNotification, Tile, Button, ButtonSet, Accordion, AccordionItem, CodeSnippet, InlineNotification } from "@carbon/react";
 import styles from './_no-role.module.scss'
 
 
@@ -17,12 +17,53 @@ export default function NoRolePage() {
     }
 
     const handleKeyDown = (event: any) => {
-
         console.log(event)
         if (event.key === 'Enter' || event.key === ' ') {
             handleLinkClick(event.target.firstChild.data)
         }
     }
+
+    const noAttributesCode = `
+    <ul>
+        <li tabIndex={0} onClick={handleLinkClick('Example 1')}>Example 1</li>
+        <li tabIndex={0} onClick={handleLinkClick('Example 2')>Example 2</li>
+        <li tabIndex={0} onClick={handleLinkClick('Example 3')>Example 3</li>
+    </ul>
+    `
+
+    const onKeyDownCode = `
+    const handleKeyDown = (event: any) => {
+        console.log(event)
+        if (event.key === 'Enter' || event.key === ' ') {
+            handleLinkClick(event.target.firstChild.data)
+        }
+    }
+
+    <ul>
+        <li 
+        role="button" 
+        className={styles.interactableLi} 
+        aria-label="open notification" 
+        onKeyDown={handleKeyDown} 
+        tabIndex={0} 
+        key={index} onClick={() => handleLinkClick(Example 1)>
+            Example 1
+        </li>
+    </ul>
+    `
+    const buttonSetCode = `
+    <ButtonSet>
+        <Button onClick={() => handleLinkClick('Example 1')}>
+            'Example 1'
+        </Button>
+        <Button onClick={() => handleLinkClick('Example 2')}>
+            'Example 2'
+        </Button>
+        <Button onClick={() => handleLinkClick('Example 3')}>
+            'Example 3'
+        </Button>
+    </ButtonSet>
+    `
 
     return <div>
         <h2>Tab Index and Key Press</h2>
@@ -35,6 +76,14 @@ export default function NoRolePage() {
                     <li tabIndex={0} key={index} onClick={() => handleLinkClick(link)}>{link}</li>
                 ))}
             </ul>
+            <br />
+            <Accordion>
+                <AccordionItem title="Code">
+                    <CodeSnippet type="multi">
+                        {noAttributesCode}
+                    </CodeSnippet>
+                </AccordionItem>
+            </Accordion>
         </Tile>
         <br />
         <Tile>
@@ -45,6 +94,14 @@ export default function NoRolePage() {
                     <li role="button" className={styles.interactableLi} aria-label="open notification" onKeyDown={handleKeyDown} tabIndex={0} key={index} onClick={() => handleLinkClick(link)}>{link}</li>
                 ))}
             </ul>
+            <br />
+            <Accordion>
+                <AccordionItem title="Code">
+                    <CodeSnippet type="multi">
+                        {onKeyDownCode}
+                    </CodeSnippet>
+                </AccordionItem>
+            </Accordion>
         </Tile>
         <br />
         <Tile>
@@ -57,10 +114,18 @@ export default function NoRolePage() {
                     </Button>
                 ))}
             </ButtonSet>
+            <br />
+            <Accordion>
+                <AccordionItem title="Code">
+                    <CodeSnippet type="multi">
+                        {buttonSetCode}
+                    </CodeSnippet>
+                </AccordionItem>
+            </Accordion>
         </Tile >
         <br />
         {
-            showNotification && <ToastNotification
+            showNotification && <InlineNotification
                 aria-label="closes notification"
                 kind="info"
                 onClose={() => setShowNotification(false)}
@@ -68,7 +133,6 @@ export default function NoRolePage() {
                 role="status"
                 statusIconDescription="notification"
                 subtitle={selectedLink}
-                timeout={4000}
                 title="Action Clicked"
             />
         }
