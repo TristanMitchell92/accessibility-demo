@@ -8,9 +8,6 @@ import {
     HeaderGlobalBar,
     HeaderGlobalAction,
     SkipToContent,
-    SideNav,
-    SideNavItems,
-    HeaderSideNavItems,
 } from '@carbon/react';
 
 import { Switcher, Notification, UserAvatar } from '@carbon/icons-react';
@@ -33,7 +30,7 @@ export default function AppHeader() {
                     Accessibility Demo
                 </HeaderName>
                 <HeaderNavigation aria-label="Accessibility demo with carbon">
-                    <HeaderMenuItem onClick={() => { router.push('/examples') }}>Examples</HeaderMenuItem>
+                    <HeaderMenuItem role='button' onClick={() => { router.push('/examples') }}>Examples</HeaderMenuItem>
                 </HeaderNavigation>
                 <HeaderGlobalBar>
                     <HeaderGlobalAction

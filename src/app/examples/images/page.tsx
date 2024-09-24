@@ -5,7 +5,7 @@ import Image from 'next/image'
 export default function ImageExamplesPage() {
     return <div>
         <h3>Images</h3>
-        <p>Examples of how a screen reader </p>
+        <p>Examples of how a screen reader handles alt text on images</p>
         <br></br>
         <Tile>
             <h3>No alt text</h3>
@@ -32,7 +32,7 @@ export default function ImageExamplesPage() {
         </Tile>
         <br />
         <Tile>
-            <h3>With aria-labelledby</h3>
+            <h3>With aria-labelledby and blockquote</h3>
             <Image
                 tabIndex={0}
                 src="/we-all-make-mistakes.jpg"

@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { ToastNotification, Tile, Button, ButtonSet, Accordion, AccordionItem, CodeSnippet, InlineNotification } from "@carbon/react";
+import { Tile, Button, ButtonSet, Accordion, AccordionItem, CodeSnippet, InlineNotification } from "@carbon/react";
 import styles from './_no-role.module.scss'
+import { Link } from '@carbon/react'
+import { Launch } from "@carbon/icons-react";
 
 
 export default function NoRolePage() {
@@ -122,6 +124,8 @@ export default function NoRolePage() {
                     </CodeSnippet>
                 </AccordionItem>
             </Accordion>
+            <br />
+            <Link href='https://carbondesignsystem.com/components/button/accessibility/' target="_blank" renderIcon={() => <Launch aria-label="External Link" />}>Acessibility docs</Link>
         </Tile >
         <br />
         {
